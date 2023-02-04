@@ -1,0 +1,176 @@
+
+
+  @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap');
+
+
+*,*::before,*::after{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+:root{
+--clr-drk-magenta:hsl(300, 43%, 22%);
+--soft-pink:hsl(333, 80%, 67%);
+--clr-drk-grayish-magenta:hsl(303, 10%, 53%);
+--clr-lyt-grayish-magenta:hsl(300, 24%, 96%);
+--clr-white:hsl(0, 0%, 100%);
+
+--fw-400:400;
+--fw-500:500;
+--fw-700:700;
+}
+
+body{
+  font-family: 'League Spartan', sans-serif;
+  font-size:15px;
+  display:grid;
+  place-items:center;
+  height:100vh;
+  background-image:url(images/bg-pattern-top-mobile.svg),url(images/bg-pattern-bottom-mobile.svg);
+  background-position:top left, bottom right;
+  background-repeat:no-repeat;
+ }
+
+img{
+  display:block;
+  max-width:100%;
+}
+.flex{
+  display:flex;
+  align-items:center;
+  gap:2rem;
+}
+.flex-col{
+  flex-direction:column;
+}
+.grid{
+  display:grid;
+}
+
+.grid-spacing-lg{
+  gap: 4.5rem;
+}
+.grid-spacing-normal{
+  gap:1.5rem;
+}
+.grid-spacing-sm{
+  gap:1rem;
+}
+
+.txt-center{
+  text-align:center;
+}
+.product_reviews p,
+.testimonials blockquote{
+  font-size:1.5rem;
+  line-height:1.5;
+  }
+main{
+  width:max(375px , 90%);
+  padding-block:4rem 5rem;
+  padding-inline:1rem;
+   
+}
+
+
+.product_reviews h1{
+  color:var(--clr-drk-magenta);
+  font-size:3rem;
+ }
+
+.product_reviews p{
+  color:var(--clr-drk-grayish-magenta);
+  font-weight:var(--fw-500);
+ }
+.product_ratings{
+  color:var(--clr-drk-magenta);
+  font-size:1.5rem;
+  font-weight:var(--fw-700);
+  }
+.product_ratings div{
+  padding:1.2rem;
+  background-color:var(--clr-lyt-grayish-magenta);
+  border-radius:.5rem;
+}
+
+.testimonials {  
+  color:var(--clr-white);
+}
+.testimonial{
+  padding-inline:2rem;
+  padding-block:2.5rem;
+  background-color:var(--clr-drk-magenta);
+  border-radius:0.8rem;
+}
+.testimonials img{
+ width:3.5rem;
+ border-radius:50%;
+}
+.author_details{
+  gap:.3rem;
+  font-size:1.5rem;
+  }
+.author_details cite{
+  font-weight:var(--fw-700);
+  }
+.author_details cite + span{
+  color:var(--soft-pink);
+}
+
+@media(min-width:900px){
+  body{
+    background-image:url(images/bg-pattern-top-desktop.svg),url(images/bg-pattern-bottom-desktop.svg);
+  }
+  main > section.grid{
+    grid-template-columns:1fr 1fr;
+  }
+  .product_reviews{
+    text-align: left;
+   
+  }
+  .product_reviews h1{
+    width: max(50%,450px);
+    font-size:3.5rem;
+  }
+  .product_reviews p{
+    padding-inline:0 1rem;
+  }
+  .product_ratings{
+    text-align:left;
+    align-items: start;
+    grid-template-rows: repeat(3,min-content);
+    align-content: center;
+    
+  }
+  .product_ratings div{
+    font-size: clamp(1.1rem, 1.5vw + 0.1rem,1.5rem);
+    grid-template-columns:1fr 2fr;
+    align-items:baseline;
+    justify-self:start;
+  }
+  .product_ratings div:nth-child(2){
+    justify-self:center;
+      }
+  .product_ratings div:nth-child(3){
+    justify-self:end;
+  }
+  .testimonials{
+    grid-column:1/-1;
+    grid-template-columns:repeat(3,1fr);
+    grid-template-rows:minmax(400px,1fr);
+      }
+  .testimonial{
+    align-self:start;
+  }
+  .testimonial:nth-child(2){
+    align-self:center;
+  }
+  .testimonial:nth-child(3){
+    align-self:end;
+  }
+  .author_details{
+    font-size:clamp(1rem, 2vw,1.5rem);
+  }
+
+}
